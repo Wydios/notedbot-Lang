@@ -1033,7 +1033,7 @@
 		"daily": "🎉 Daily Bonus Du hast deinen täglichen Bonus von {reward} Notis erhalten",
 		"newUser": "🎉 Willkommen an Bord, {user|antiping}! Dein Abenteuer im Notis-Universum beginnt jetzt. Mit {prefix}notis kannst du jede Stunde neue Notis Sammeln. Als Startguthaben bekommst du 100 Notis. Nutze sie weise!",
 		"status": {
-    		"cd": "⏳ {time} CD",
+    		"cd": "{emoji} {time} CD",
     		"bank": "🏦 kontostand: {notis} Notis",
     		"prestige": "💎 Prestige: {level}",
     		"ready": "🚀 Bereit für Prestige? Nutze {prefix}prestige",
