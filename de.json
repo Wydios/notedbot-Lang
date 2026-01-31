@@ -72,7 +72,7 @@
 			"cosmetics": {
   				"presence": {
 					"nopresence": "🛑 ➜ {user|antiping} Ist nicht in meiner Presence Datenbank. Er kann sich mit {prefix}autopresence adden lassen",
-					"status": "(7TV) ➜ Presence Status für {user|antiping} • Presence: {presence} • 7tv Sub: {stvsub}",
+					"status": "{(7TV) ➜|wydios7tv} Presence Status für {user|antiping} • Presence: {presence} • 7tv Sub: {stvsub}",
 					"notyou": "🚫 ➜ {user|antiping} Muss Selber Entscheiden ob der AutoPresence will. Sag ihn er Soll dafür {prefix}autopresence nutzen",
 					"nosub": "⚠️ Du bist keine Aktiver 7tv Sub",
 					"auto": "{BloodTrail|wydiosOk} AutoPresence {mode} 💡 Hinweis: Wenn dein 7TV Sub endet und du neu abonnierst, kann es bis zu 1 Stunde dauern, bis dein Presence wieder aktualisiert wird",
@@ -80,23 +80,23 @@
 						"user": "⚠️ ➜ {user|antiping} hat keine 7tv Cosmetics",
 						"self": "⚠️ ➜ Du hast keine 7tv Cosmetics"
 					},
-					"updated": "(7TV) ➜ Presence Updatet"
+					"updated": "{(7TV) ➜|wydios7tv} Presence Updatet"
 				},
 				"badge": {
-					"info": "(7TV) ➜ Badge: {badgeName} • Badge ID: {badgeId} • Beschreibung {badgeDescription} • Vorschau: {preview} • {activeCount} nutzen dieses Badge aktiv • {inventoryCount} besitzen dieses Badge",
-					"no": "(7TV) ➜ {user|antiping} hat keine 7tv Badge",
-					"user": "(7TV) ➜ {user|antiping}'s Badge ist ` {badgeName} ` • Badge ID: {badgeId} • Beschreibung {badgeDescription} • Vorschau: {preview} • Vanity: {vanity} • {activeCount} nutzen dieses Badge aktiv • {inventoryCount} besitzen dieses Badge"
+					"info": "{(7TV) ➜|wydios7tv} Badge: {badgeName} • Badge ID: {badgeId} • Beschreibung {badgeDescription} • Vorschau: {preview} • {activeCount} nutzen dieses Badge aktiv • {inventoryCount} besitzen dieses Badge",
+					"no": "{(7TV) ➜|wydios7tv} {user|antiping} hat keine 7tv Badge",
+					"user": "{(7TV) ➜|wydios7tv} {user|antiping}'s Badge ist ` {badgeName} ` • Badge ID: {badgeId} • Beschreibung {badgeDescription} • Vorschau: {preview} • Vanity: {vanity} • {activeCount} nutzen dieses Badge aktiv • {inventoryCount} besitzen dieses Badge"
 				}, 
 				"paint": {
-					"info": "(7TV) ➜ Paint: {paintName} • Paint ID: {paintId} • Vorschau: {preview} • {activeCount} nutzen dieses Paint aktiv • {inventoryCount} besitzen dieses Paint",
-					"no": "(7TV) ➜ {user|antiping} hat keine 7tv Paint",
-					"user": "(7TV) ➜ {user|antiping}'s Paint ist ` {paintName} ` • Paint ID: {paintId} • Vorschau: {preview} • Vanity: {vanity} • {activeCount} nutzen dieses Paint aktiv • {inventoryCount} besitzen dieses Paint"
+					"info": "{(7TV) ➜|wydios7tv} Paint: {paintName} • Paint ID: {paintId} • Vorschau: {preview} • {activeCount} nutzen dieses Paint aktiv • {inventoryCount} besitzen dieses Paint",
+					"no": "{(7TV) ➜|wydios7tv} {user|antiping} hat keine 7tv Paint",
+					"user": "{(7TV) ➜|wydios7tv} {user|antiping}'s Paint ist ` {paintName} ` • Paint ID: {paintId} • Vorschau: {preview} • Vanity: {vanity} • {activeCount} nutzen dieses Paint aktiv • {inventoryCount} besitzen dieses Paint"
 				},
 				"list": "• Besitzerliste: {ownerList}"
 			},
 			"subage": {
 				"billing": "⚠️ ➜ Ich konnte keine 7tv Sub Daten finden",
-				"start": "(7TV) ➜ ",
+				"start": "{(7TV) ➜|wydios7tv} ",
 				"noSub": "{user|antiping} ist kein aktiver 7TV Sub",
 				"nonSubDate": " • war für {days} Tage ein Sub, Ende war vor {enddays}",
 				"isSub": "{user|antiping} ist ein aktiver 7TV Sub • Seit: {months} Monate und {remainingDays} Tage",
@@ -104,7 +104,7 @@
 				"reSub": " • Resubt in {subEnd}",
 				"subEnd": " • Sub endet in {subEnd}"
 			},
-			"set": "(7TV) ➜ {channel|antiping} hat noch {availableSlots} Emote Plätze frei • Emotes: {usedSlots}/{capacity} • Set Name: {emoteSetName} • ID: {activeEmoteSetid} | {emoteSetLink}",
+			"set": "{(7TV) ➜|wydios7tv} {channel|antiping} hat noch {availableSlots} Emote Plätze frei • Emotes: {usedSlots}/{capacity} • Set Name: {emoteSetName} • ID: {activeEmoteSetid} | {emoteSetLink}",
 			"setpaint": {
 				"noPaints": "⚠️ ➜ Du hast Keine 7tv Paints",
 				"noPerms": "🚫 ➜ ich habe keine Rechte dein Paint zu ändern bitte füge {bot} also 7tv Editor mit den Perm: ManageProfile",
@@ -126,7 +126,7 @@
 				}
 			},
 			"user": {
-				"start": "(7TV) ➜ Name: {user|antiping} • ID: {stvid} • Page: {userUrl} • Erstellt Am: {createdAt}",
+				"start": "{(7TV) ➜|wydios7tv} Name: {user|antiping} • ID: {stvid} • Page: {userUrl} • Erstellt Am: {createdAt}",
 				"set": " • Emote Set: {emoteSetName} ({usedSlots}/{capacity} Emotes)",
 				"paint": {
 					"has": " • Paint: {paint}",
@@ -147,7 +147,7 @@
 			"noActiveSet": "🚫 ➜ {channel|antiping} hat kein aktives Emote Set",
 			"ownedSet": "🚫 ➜ Das Emote Set gehört nicht zu deinem Channel und kann nicht angepasst werden",
 			"noPerms": "🚫 ➜ Du brauchst 7TV Rechte in diesem Channel oder {channel|antiping} added dich mit {prefix}7tveditor {user} ihn die Interne Liste",
-			"noAcc": "(7TV) ➜ Kein 7TV Account für ` {user} ` gefunden"
+			"noAcc": "{(7TV) ➜|wydios7tv} Kein 7TV Account für ` {user} ` gefunden"
 		},
 		"editors": {
 			"noList": "⚠️ ➜ Es gibt keine User ihn der internen Editor Liste du kannst Leute mit {prefix}7tveditor <username> hinzufügen",
@@ -372,19 +372,22 @@
 		},
 		"duhu": "{user} • {message}",
 		"emotecatch": {
-			"noPermission": "{FeelsDankMan ➜|wydiosStop} Du hast keine Berechtigung um den EmoteCatcher zu stoppen",
+			"no": {
+				"permission": "{FeelsDankMan ➜|wydiosStop} Du hast keine Berechtigung um den EmoteCatcher zu stoppen",
+				"activeGame": "{FeelsDankMan ➜|wydiosStop} Es läuft kein EmoteCatcher",
+				"emotes": "⚠️ ➜ Ich Konnte keine 7tv Emotes finden",
+				"enoughEmotes": "⛔ ➜ Guter Versuch aber du Brauchst mindestens 100 Emotes im Set"
+			},
 			"stopped": "{FeelsOkayMan 👍|wydiosOk} Der EmoteCatcher wurde gestoppt. Das Emote war ` {emote} `",
-			"noActiveGame": "{FeelsDankMan ➜|wydiosStop} Es läuft kein EmoteCatcher",
-			"isRunning": "{FeelsDankMan ➜|wydiosStop} Es Läuft Gerade ein EmoteCatcher • Rest Zeit: {duration}",
-			"noEmotes": "⚠️ ➜ Ich Könnte keine 7tv Emotes finden",
-			"notEnoughEmotes": "⛔ ➜ Guter Versuch aber du Brauchst Mindests 100 Emotes im Set",
+			"isRunning": "{FeelsDankMan ➜|wydiosStop} Es Läuft Gerade ein EmoteCatcher • Restzeit: {duration}",
+			"canStop": "• Du kannst ihn mit {prefix}stopemotecatch stoppen",
 			"hint": {
 			  	"first": "Erster Buchstabe: {first}",
 			  	"last": "Letzter Buchstabe: {last}",
 			  	"second": "Zweiter Buchstabe: {second}",
 			  	"secondLast": "Vorletzter Buchstabe: {secondLast}"
 			},
-			"start": "{FeelsOkayMan|wydiosOk} EmoteCatcher Gestartet Das Emote hat {len} Buchstaben/Zahlen und ist {notis} Notis Wert",
+			"start": "{FeelsOkayMan|wydiosBased} EmoteCatcher gestartet • Das Emote hat {len} Buchstaben/Zahlen und ist {notis} Notis Wert",
 			"hit": {
 				"no": "{BigSad|wydiosSad} Keiner hat das Emote gefunden, Es war ` {emote} `",
 				"hitting": "{peepoHappy|wydiosHappy} {user|antiping} hat das Emote gefunden es war ` {emote} ` • 💶 Du hast {notis} Notis bekommen"
@@ -820,9 +823,10 @@
 		"translate": "{FeelsDankMan|wydiosOk} Translate von {from} zu {to} ➜ ` {text} `",
 		"tuck": {
 			"selfTuck": "GuNa ➜ {user} kuschelt sich selbst ins Bett... gute Nacht 🛏️",
-			"targetTuck": "GuNa ➜ {username} bringt {user} vorsichtig ins Bett 👉 🛏️ ({user} wurde schon {count} mal ins Bett gebracht {emoji})",
+			"targetTuck": "GuNa ➜ {username} bringt {user} vorsichtig ins Bett 👉 🛏️",
 			"selfTruck": "GuNa ➜ {user} bringt sich selber ins Bett mit der Kraft von einen {engine} 🛻",
-			"targetTruck": "GuNa ➜ {username} bringt {user} mit Power eines {engine} ins Bett 🛻 ({user} wurde schon {count} mal ins Bett gebracht {emoji})"
+			"targetTruck": "GuNa ➜ {username} bringt {user} mit Power eines {engine} ins Bett 🛻",
+			"count": "({user} wurde schon {count} mal ins Bett gebracht)"
 		},
 		"user": {
 			"userbanned": {
@@ -945,11 +949,11 @@
 		"bot": {
 			"join": {
 				"channel": "{peepoHappy 🩵|wydiosLove} Danke, dass du mich hinzugefügt hast. Meine Commands kannst du hier sehen ➜ {link} • Prefix {prefix} • Use ` {prefix}channel lang en ` to Change the Language in English",
-				"bot": "{peepoHappy|wydiosLove} RaveTime NotedBot joined Channel ` @{user} ` data: (ID: {twitchid} • (Lang: {lang}) • (Prefix: {prefix})"
+				"bot": "{peepoHappy|wydiosLove} RaveTime NotedBot joined Channel ` @{user} ` (Id: {twitchid})"
 			},
 			"part": {
 				"channel": "{peepoSad|wydiosSad} RainTime 💔 RainTime Ich verlasse nun den Chat • 🖕 {user}",
-				"bot": "{peepoSad|wydiosSad} RainTime NotedBot parted Channel ` @{user} ` data: (ID: {twitchid}) • (Lang: {lang}) • (Prefix: {prefix}) • Ich bin Am: {joined} gejoint"
+				"bot": "{peepoSad|wydiosSad} RainTime NotedBot parted Channel ` @{user} ` data: (Id: {twitchid}) • (Lang: {lang}) • (Prefix: {prefix}) • Ich bin Am: {joined} gejoint"
 			}
 		},
 		"prefix": "{FeelsOkayMan 👍|wydiosOk} Mein Channel Prefix ist ` {prefix} `",
