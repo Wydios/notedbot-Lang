@@ -370,7 +370,6 @@
 			"list": "{FeelsOkayMan 👉|wydiosOk} Es gibt {blocked} geblockte Commands und {custom} Custom Commands {list}",
 			"prefix": "{BigSad ➜|wydiosSad} Mein Channel Prefix ist ` ! ` und da {bot} auch hier ist, bitte ich änderen Sie meinen Prefix mit !prefix sonst gibt’s Ein Trigger-Chaos • 💡 Oder Schreibe !!{usage} um es zu umgehen"
 		},
-		"duhu": "{user} • {message}",
 		"emotecatch": {
 			"no": {
 				"permission": "{FeelsDankMan ➜|wydiosStop} Du hast keine Berechtigung um den EmoteCatcher zu stoppen",
@@ -685,27 +684,36 @@
 		},
 		"remind": {
 			"add": {
-				"usage": "FeelsDankMan ➜ Bitte schreibe {prefix}{trigger} {user} <Nachricht> [Optional: Zeit z.B. `in 3 Stunden`, `in 2 Minuten` oder `am 03.10.2025 00:00:00`]",
-				"bot": "B) ➜ Ich brauche keinen Remind",
+				"usage": {
+					"normal": "{FeelsDankMan ➜|wydiosStop} Bitte schreibe {prefix}{trigger} <user> <Nachricht> (Optional: Zeit z.b. `in 1y 2m 3w 4d 5h 6min 7s` oder `am 3.10.2026 15:55`) ⚠️ Fehler? Try {prefix}suggest",
+					"me": "{FeelsDankMan ➜|wydiosStop} Bitte schreibe {prefix}{trigger}me <Nachricht> (Optional: Zeit z.b. `in 1y 2m 3w 4d 5h 6min 7s` oder `am 3.10.2026 15:55`) ⚠️ Fehler? Try {prefix}suggest"
+				},
+				"bot": "{B) ➜|wydiosBased} Ich Brauche Keine Reminds",
 				"blocked": "🚫 ➜ Dieser Benutzer hat dich blockiert. Du kannst keine Reminders für ihn erstellen",
 				"ignored": "🚫 ➜ Dieser Benutzer ist vom Bot ignoriert und kann keine Reminders bekommen",
-				"noTime": "bei der nächsten Nachricht",
-				"creat": "Noted ➜ Reminder (ID: {remindid}) für {user} gespeichert. Benachricht wird: {remindtime}"
+				"limit": "⚠️ ➜ Du darfst nur Reminder erstellen, die insgesamt unter 2 Jahren liegen",
+				"creat": "Noted ➜ Reminder (Id: {id}) für {user} gespeichert. Benachricht wird am: {time}"
 			},
 			"my": {
-				"noReminds": "FeelsDankMan ➜ Du hast keine Reminders",
-				"reminds": "FeelsDankMan ➜ Hier sind alle Deine Reminds: {link}"
+				"noReminds": "{FeelsDankMan ➜|wydiosStop} Du hast keine Reminders",
+				"reminds": "{FeelsDankMan ➜|wydiosOk} Hier sind alle Deine Reminds: {link}"
+			},
+			"un": {
+				"usage": "{FeelsDankMan ➜|wydiosStop} Bitte schreibe {prefix}{trigger} <id> • um alle deine Reminds zu sehen mach {prefix}myreminders",
+				"inValid": "{FeelsDankMan ➜|wydiosStop} Die Angegebende id ist keine Zahl",
+				"noId": "⚠️ ➜ ich hab keinen Remind mit der id ` {id} ` gefunden",
+				"notYourId": "🚫 ➜ Der Reminder mit der id ` {id} ` gehört nicht dir",
+				"success": "{FeelsDankMan ➜|wydiosOk} Ich habe deinen Reminder mit der id ` {id} ` gelöscht"
 			},
 			"block": {
-				"usage": "FeelsDankMan ➜ Bitte schreibe {prefix}{trigger} <username>",
-				"block": "FeelsOkayMan 👍 ➜ @{user} (ID: {userid}) wurde {action}"
-			},
-			"remove": {
-				"usage": "FeelsDankMan ➜ Bitte schreibe {prefix}{trigger} <id> • um alle deine Reminds zu sehen mach {prefix}myreminders",
-				"noId": "⚠️ ➜ ich hab keinen Remind mit der id ` {id} ` gefunden",
-				"notYourId": "🚫 ➜ Der Remind mit der id ` {id} ` gehört nicht dir",
-				"success": "FeelsDankMan ➜ Ich hab deinen Remind mit der ID: ` {id} ` gelöscht"
+				"usage": "{FeelsDankMan ➜|wydiosStop} Bitte schreibe {prefix}{trigger} <username>",
+				"self": "{FeelsDankMan ➜|wydiosPout} Du Kannst dich nicht Selber Blocken",
+				"success": "{FeelsOkayMan ➜|wydiosOk} @{user} (Id: {id}) wurde {action}"
 			}
+		},
+		"randomping": {
+			"dink": "{emote} • {user}",
+			"msg": "{message}"
 		},
 		"rollet": {
 			"noNotis": "⚠️ ➜ Du hast keine Notis. Nutz {prefix}notis zm welche zu farmen",
@@ -994,7 +1002,7 @@
 				"start": "heCrazy @{user} Ist jetzt {live|wydiosLive}",
 				"category": " und spielt: {game}",
 				"title": " mit den title: {title}",
-				"pings": " • dinkDonk {users}"
+				"pings": " • {dink} {users}"
 			},
 			"offline": "Saj @{user} ist jetzt {Offline|wydiosOffline}",
 			"noSubscribers": "• 🐌 Kein Subscribers für den Streamer"
@@ -1022,14 +1030,14 @@
 
 	"remind": {
 		"event": {
-			"tooMany": "{dink} ➜ @{user} Du hast zu viele Reminds hier ist ein Link: {link}",
-			"multi": "{dink} ➜ @{user} Reminders von {allReminders}",
-			"selfSingle": "{dink} ➜ @{user} Reminder von dir selbst • {msg} vor {ago}",
-			"otherSingle": "{dink} ➜ @{user} Reminder von {from} • {msg} vor {ago}"
+			"tooMany": "{dink} @{user} Du hast zu viele Reminds hier ist ein Link: {link}",
+			"multi": "{dink} @{user} Reminders von {allReminders}",
+			"selfSingle": "{dink} @{user} Reminder von dir selbst • {msg} vor {ago}",
+			"otherSingle": "{dink} @{user} Reminder von {from} • {msg} vor {ago}"
 		},
 		"time": {
-			"selfReminder": "{dink} ➜ @{user} Reminder von dir selbst • {msg} vor {ago}",
-			"otherReminder": "{dink} ➜ @{user} Reminder von {from} • {msg} vor {ago}"
+			"self": "{dink} @{user} Reminder von dir selbst • {msg} vor {ago}",
+			"other": "{dink} @{user} Reminder von {from} • {msg} vor {ago}"
 		}
 	},
 
