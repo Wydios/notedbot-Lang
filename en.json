@@ -370,7 +370,6 @@
 		    "list": "{FeelsOkayMan 👉|wydiosOk} There are {blocked} blocked commands and {custom} custom commands {list}",
 		    "prefix": "{BigSad ➜|wydiosSad} My channel prefix is `!`. Since {bot} is also here, please change my prefix with !prefix or triggers might get messy 💡 Or type !!{usage} to bypass it"
 		},
-		"duhu": "{user} • {message}",
 		"emotecatch": {
 		  	"no": {
 		    	"permission": "{FeelsDankMan ➜|wydiosStop} You don’t have permission to stop the EmoteCatcher",
@@ -390,7 +389,7 @@
 		  	"start": "{FeelsOkayMan|wydiosBased} EmoteCatcher started • The emote has {len} letters/numbers and is worth {notis} Notis",
 		  	"hit": {
 		    	"no": "{BigSad|wydiosSad} Nobody found the emote, it was ` {emote} `",
-		    	"hitting": "{peepoHappy|wydiosHappy} {user|antiping} found the emote — it was ` {emote} ` • 💶 You received {notis} Notis"
+		    	"hitting": "{peepoHappy|wydiosHappy} {user|antiping} found the emote it was ` {emote} ` • 💶 You received {notis} Notis"
 		  	}
 		},
 		"eval": {
@@ -684,28 +683,37 @@
   			"confirm": "{FeelsOkayMan 👍|wydiosOk} Congratulations! Your prestige has been increased to level {level} • 🏦 New account balance: {notis} Notis"
 		},
 		"remind": {
-			"add": {
-    			"usage": "FeelsDankMan ➜ Please use {prefix}{trigger} {user} <message> [Optional: time e.g. `in 3 hours`, `in 2 minutes` or `at 03.10.2025 00:00:00`]",
-    			"bot": "B) ➜ I don't need a reminder",
-    			"blocked": "🚫 ➜ This user has blocked you. You can't create reminders for them",
+  			"add": {
+    			"usage": {
+     				"normal": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger} <user> <message> (Optional time e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest",
+     				"me": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger}me <message> (Optional time e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest"
+    			},
+    			"bot": "{B) ➜|wydiosBased} I don’t need reminders",
+    			"blocked": "🚫 ➜ This user has blocked you. You cannot create reminders for them",
     			"ignored": "🚫 ➜ This user is ignored by the bot and cannot receive reminders",
-				"noTime": "on next message",
-    			"creat": "Noted ➜ Reminder (ID: {remindid}) for {user} saved. Will notify at: {remindtime}"
-			},
-			"my": {
-				"noReminds": "FeelsDankMan ➜ You have no reminders",
-				"reminds": "FeelsDankMan ➜ Here are all your reminders: {link}"
-			},
-			"block": {
-			    "usage": "FeelsDankMan ➜ Please type {prefix}{trigger} <username>",
-			    "block": "FeelsOkayMan 👍 ➜ @{user} (ID: {userid}) has been {action}"
-			},
-			"remove": {
-				"usage": "FeelsDankMan ➜ Please type {prefix}{trigger} <id> • to see all your reminders use {prefix}myreminders",
-				"noId": "⚠️ ➜ I couldn't find a reminder with the id ` {id} `",
-				"notYourId": "🚫 ➜ The reminder with the id ` {id} ` does not belong to you",
-				"success": "FeelsDankMan ➜ I deleted your reminder with the ID: ` {id} `"
-			}
+				"limit": "⚠️ ➜ You may only create reminders that are scheduled within a total of 2 years",
+    			"creat": "Noted ➜ Reminder (Id: {id}) saved for {user}. Notification will be sent on: {time}"
+  			},
+  			"my": {
+    			"noReminds": "{FeelsDankMan ➜|wydiosStop} You have no reminders",
+    			"reminds": "{FeelsDankMan ➜|wydiosOk} Here are all your reminders: {link}"
+  			},
+  			"un": {
+    			"usage": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger} <id> • to see all your reminders use {prefix}myreminders",
+    			"inValid": "{FeelsDankMan ➜|wydiosStop} The provided id is not a number",
+    			"noId": "⚠️ ➜ I couldn’t find a reminder with the id `{id}`",
+    			"notYourId": "🚫 ➜ The reminder with the id `{id}` does not belong to you",
+    			"success": "{FeelsDankMan ➜|wydiosOk} I have deleted your reminder with the id `{id}`"
+  			},
+  			"block": {
+    			"usage": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger} <username>",
+    			"self": "{FeelsDankMan ➜|wydiosPout} You cannot block yourself",
+    			"success": "{FeelsOkayMan ➜|wydiosOk} @{user} (Id: {id}) has been {action}"
+  			}
+		},
+		"randomping": {
+			"dink": "{emote} • {user}",
+			"msg": "{message}"
 		},
 		"rollet": {
 			"noNotis": "⚠️ ➜ You don’t have any Notis. Use {prefix}notis to farm some",
@@ -994,7 +1002,7 @@
 				"start": "heCrazy @{user} is now {live|wydiosLive}",
 				"category": " and playing: {game}",
 				"title": " with the title: {title}",
-				"pings": " • dinkDonk {users}"
+				"pings": " • {dink} {users}"
 			},
 			"offline": "Saj @{user} is now {offline|wydiosOffline}",
 			"noSubscribers": "• 🐌 No subscribers for the streamer"
@@ -1022,14 +1030,14 @@
 
 	"remind": {
 		"event": {
-			"tooMany": "{dink} ➜ @{user} You have too many reminders here is a link: {link}",
-			"multi": "{dink} ➜ @{user} reminders from {allReminders}",
-			"selfSingle": "{dink} ➜ @{user} Reminder from yourself • {msg} {ago} ago",
-			"otherSingle": "{dink} ➜ @{user} Reminder from {from} • {msg} {ago} ago"
+			"tooMany": "{dink} @{user} You have too many reminders here is a link: {link}",
+			"multi": "{dink} @{user} reminders from {allReminders}",
+			"selfSingle": "{dink} @{user} Reminder from yourself • {msg} {ago} ago",
+			"otherSingle": "{dink} @{user} Reminder from {from} • {msg} {ago} ago"
 		},
 		"time": {
-			"selfReminder": "{dink} ➜ @{user} Reminder from yourself • {msg} {ago} ago",
-			"otherReminder": "{dink} ➜ @{user} Reminder from {from} • {msg} {ago} ago"
+		  	"self": "{dink} @{user} Reminder from yourself • {msg} {ago} ago",
+		  	"other": "{dink} @{user} Reminder from {from} • {msg} {ago} ago"
 		}
 	},
 
