@@ -35,7 +35,7 @@
 			"yoink": {
 				"usage": "{FeelsDankMan ➜|wydiosStop} Please use {usage} yoink <Channel> <EmoteName> <Optional: EmoteName> – yoinks an emote from another channel",
 				"self": "⛔ ➜ You can’t yoink your own emotes since they are already here",
-				"noFound": "⚠️ ➜ Emote ` {emote} ` not found in the channel",
+				"noFound": "⚠️ ➜ Emote ` {emote} ` not found in the channel {channel|antiping}",
 				"nameConflict": "⛔ ➜ The emote name ` {emote} ` is already in use in your channel",
 				"success": "{FeelsOkayMan 👍|wydiosOk} Emote ` {emote} ` yoinked from channel {channel|antiping}",
 				"yoinked": "{FeelsOkayMan 👍|wydiosOk} Emote ` {emote} ` successfully yoinked"
@@ -72,7 +72,7 @@
 			"cosmetics": {
 				"presence": {
 					"nopresence": "🛑 ➜ {user|antiping} is not in my presence database. He can be added with {prefix}autopresence",
-					"status": "{(7TV) ➜|wydios7tv} Presence status for {user|antiping} • Presence: {presence} • 7TV Sub: {stvsub}",
+					"status": "{(7TV) ➜|wydios7tv} Presence status for {user|antiping} • Presence Status: {presence} • 7TV Sub: {stvsub}",
 					"notyou": "🚫 ➜ {user|antiping} must decide for themselves if they want AutoPresence. Tell them to use {prefix}autopresence",
 					"nosub": "⚠️ You don’t have an active 7TV subscription",
 					"auto": "{BloodTrail|wydiosOk} AutoPresence {mode} 💡 Note: If your 7TV subscription ends and you resubscribe, it may take up to 1 hour for your presence to update again",
@@ -260,6 +260,10 @@
 			"usage": "{FeelsDankMan ➜|wydiosStop} Please type {usage} <command>",
 			"notFound": "⚠️ ➜ Command {command} was not found",
 			"me": "{peepoSad ➜|wydiosPout} Why do you want to deactivate me?",
+			"disabled": {
+  				"global": "🌍 ➜ The command `{command}` was globally disabled by a developer",
+  				"hard": "🔒 ➜ The command `{command}` was disabled by a developer in this channel"
+			},
 			"enable": "{FeelsOkayMan 👍|wydiosOk} Command {command} has been enabled",
 			"disable": "{FeelsOkayMan 👍|wydiosOk} Command {command} has been disabled",
 			"check": "{FeelsOkayMan ➜|wydiosOk} The Command {command} is {mode}"
@@ -346,6 +350,18 @@
 			"stv": {
 				"on": "{FeelsOkayMan ➜|wydiosOk} 7tv doid mode has been activated",
 				"down": "{FeelsOkayMan ➜|wydiosOk} 7tv doid mode has been deactivated"
+			},
+			"cmd": {
+  				"usage": "{🫠 TeaTime ➜|wydiosHacker} Please use {usage} cmd <channel • global> <command>",
+  				"global": {
+    				"free": "🌍 ➜ The command {command} has been re-enabled globally",
+    				"block": "🌍 ➜ The command {command} has been disabled globally"
+  				},
+  				"channel": {
+    				"global": "🌍 ➜ The command {command} is globally disabled and cannot be changed for this channel",
+    				"free": "🔓 ➜ The command {command} has been re-enabled in channel {channel}",
+    				"block": "🔒 ➜ The command {command} has been disabled in channel {channel}"
+  				}
 			}
 		},
 		"customcmd": {
@@ -353,18 +369,18 @@
 		        "usage": "{FeelsDankMan ➜|wydiosStop} Please type {usage} <trigger> <message> • Use _ for multi-word triggers (e.g. hallo_welt) • Cooldown: 5 seconds • Variables: {variablen} ⚠️ Max 480 characters – Create a custom command",
 		        "tooLang": "⛔ ➜ The message cannot be longer than 480 characters",
 		        "existing": "🚫 ➜ There’s already a command with the trigger: {trigger}",
-		        "added": "{FeelsOkayMan 👍|wydiosOk} Your custom command `{trigger}` was successfully added (Response: `{content}`)"
+		        "added": "{FeelsOkayMan 👍|wydiosOk} The custom command `{trigger}` was successfully added (Response: `{content}`)"
 		    },
 			"edit": {
     			"usage": "{FeelsDankMan ➜|wydiosStop} Please use {usage} <trigger> • Variables: {variablen} ⚠️ Max 480 characters - Edit the text of a custom command",
     			"notExisting": "⚠️ ➜ No custom command found with the trigger ` {trigger} `",
     			"tooLang": "⛔ ➜ The message must not be longer than 480 characters",
-    			"edited": "{FeelsOkayMan 👍|wydiosOk} The text of your custom command ` {trigger} ` has been updated. New text: ` {content} `"
+    			"edited": "{FeelsOkayMan 👍|wydiosOk} Custom command `{trigger}` updated. New text: ` {content} `"
 			},
 		    "remove": {
 		        "usage": "{FeelsDankMan ➜|wydiosStop} Please type {usage} <trigger> • If you forgot a command use {prefix}cc list – Remove a Custom Command",
 		        "notExisting": "⚠️ ➜ No custom command found with the trigger `{trigger}` • If you forgot a command use {prefix}cc list",
-		        "removed": "{FeelsOkayMan 👍|wydiosOk} Your custom command `{trigger}` was removed"
+		        "removed": "{FeelsOkayMan 👍|wydiosOk} The custom command `{trigger}` was removed"
 		    },
 		    "noList": "⚠️ ➜ There are no blocked or custom commands. Add some using {prefix}addcmd",
 		    "list": "{FeelsOkayMan 👉|wydiosOk} There are {blocked} blocked commands and {custom} custom commands {list}",
@@ -629,16 +645,29 @@
   			}
 		},
 		"livemsg": {
-			"noList": "⚠️ ➜ There are no live messages in this channel. A mod can create one using {prefix}livemsg <streamer>",
-			"list": "{FeelsDankMan ➜|wydiosOk} Here are all live messages: {link}",
-			"noMod": "💡 Note: I am not a Moderator or VIP. Twitch's rate limits might prevent the message from being sent",
-			"enable": "{FeelsOkayMan 👍|wydiosOk} Live message for {user} has been created. If you want to get pinged, use {prefix}liveping {user}",
-			"disable": "{FeelsOkayMan 👍|wydiosOk} Live message for {user} has been deleted"
+		    "noList": "⚠️ ➜ There are no live notifications in this channel. A mod can create one with {prefix}livemsg <streamer>",
+		    "list": "{FeelsDankMan ➜|wydiosOk} Here are all live notifications: {link}",
+		    "noMod": "💡 Note: I am not a moderator or VIP. Twitch rate limits may prevent the message from being sent",
+		    "added": "{FeelsOkayMan 👍|wydiosOk} Live notification created for {added} (Notify: {prefix}liveping {added})",
+		    "removed": "{FeelsOkayMan 👍|wydiosOk} Live notification removed for {removed}",
+		    "failed": {
+        		"single": "{FeelsBadMan|wydiosThink} Channel `{failed}` not found",
+        		"plural": "{FeelsBadMan|wydiosThink} Channels not found {failed}"
+    		}
 		},
 		"liveping": {
-			"noStreamer": "⚠️ ➜ There is no live message for {user} A mod can create this with {prefix}livemsg {user}",
-  			"removed": "{FeelsOkayMan 👍|wydiosOk} You won't get pinged anymore when {user} goes live",
-  			"success": "{FeelsOkayMan 👍|wydiosOk} You'll get pinged when {user} goes live"
+		    "added": {
+		        "single": "{FeelsOkayMan 👍|wydiosOk} You will be pinged when {added} goes live",
+		        "plural": "{FeelsOkayMan 👍|wydiosOk} You will be pinged when {added} go live"
+		    },
+		    "removed": {
+		        "single": "{FeelsOkayMan 👍|wydiosOk} You will no longer receive a ping when {removed} goes live",
+		        "plural": "{FeelsOkayMan 👍|wydiosOk} You will no longer receive pings when {removed} go live"
+		    },
+		    "failed": {
+		        "single": "{FeelsBadMan|wydiosThink} There is no live notification for this channel: {failed}. A mod can create one with {prefix}livemsg {failed}",
+		        "plural": "{FeelsBadMan|wydiosThink} There are no live notifications for these channels: {failed}. A mod can create them with {prefix}livemsg {failed}"
+		    }
 		},
 		"logs": {
  			"normal": "{FeelsOkayMan 👍|wydiosOk} Here are the logs for the channel {channel|antiping} {link}",
@@ -684,15 +713,16 @@
 		},
 		"remind": {
   			"add": {
+				"maxCount": "{FeelsBadMan|wydiosSad} ➜ Sorry, but you have too many reminders (max. 30). Please delete one using {prefix}unremind <id> • To see all your reminders: {prefix}myreminders",
     			"usage": {
-     				"normal": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger} <user> <message> (Optional time e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest",
-     				"me": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger}me <message> (Optional time e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest"
+     				"normal": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger} <user> <message> (Optional: time at the end e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest",
+     				"me": "{FeelsDankMan ➜|wydiosStop} Please use {prefix}{trigger}me <message> (Optional: time at the end e.g. `in 1y 2m 3w 4d 5h 6min 7s` oder `at 3.10.2026 15:55`) ⚠️ Error? Try {prefix}suggest"
     			},
     			"bot": "{B) ➜|wydiosBased} I don’t need reminders",
     			"blocked": "🚫 ➜ This user has blocked you. You cannot create reminders for them",
     			"ignored": "🚫 ➜ This user is ignored by the bot and cannot receive reminders",
 				"limit": "⚠️ ➜ You may only create reminders that are scheduled within a total of 2 years",
-    			"creat": "Noted ➜ Reminder (Id: {id}) saved for {user}. Notification will be sent on: {time}"
+    			"creat": "Noted ➜ Reminder (Id: {id}) saved for {user}. Notified on: {time}"
   			},
   			"my": {
     			"noReminds": "{FeelsDankMan ➜|wydiosStop} You have no reminders",
@@ -912,7 +942,11 @@
 	"handel": {
 		"bot": {
 			"cmd": {
-				"disabled": "⛔ ➜ The command {command} is disabled",
+				"disabled": {
+				  	"normal": "⛔ ➜ The command {command} is disabled",
+				  	"hard": "🔒 ➜ The command {command} was disabled by a developer",
+				  	"global": "🌍 ➜ The command {command} was globally disabled by a developer"
+				},
 				"error": "{ApuApustaja|wydiosBased} 👎 Error reloading commands",
 				"success": "{ApuApustaja|wydiosBased} 👍 All commands reloaded"
 			},
